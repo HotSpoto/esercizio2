@@ -6,12 +6,33 @@
   --spazio-m: 64px;
 }
 
+:root.dark {
+  --sfondo: #121e1c;
+  --testo: #efefef;
+  --testo-tenue: #efefef80;
+}
+
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::selection {
   background-color: var(--testo-tenue);
+}
+
+#theme-toggle {
+  background: transparent;
+  color: #efefef;
+  border: 2px solid #efefef;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
 }
 
 body {
@@ -57,7 +78,7 @@ header {
   justify-content: space-between;
   max-width: 1000px;
   margin: auto;
-  padding: var(--spazio-s), 0px;
+  padding: var(--spazio-s), 0;
   display: flex;
   gap: var(--spazio-m);
 }
@@ -111,7 +132,7 @@ h3 {
 }
 
 a {
-  color: var(--sfondo);
+  color: #efefef;
   text-decoration: none;
 }
 
@@ -143,7 +164,7 @@ section {
 }
 
 .contenutoCard h2 {
-  color: var(--sfondo);
+  color: #efefef;
   font-family: 'Cormorant Garamond', 'Times New Roman';
   font-size: 66px;
   font-weight: 400;
@@ -168,13 +189,13 @@ section {
 }
 
 footer {
-  background-color: var(--testo);
+  background-color: #121e1c;
   padding: var(--spazio-s);
   font-size: 16px;
 }
 
 footer a {
-  color: #efefefc2;
+  color: #efefef80;
 }
 
 .allineaDestra {
@@ -183,4 +204,75 @@ footer a {
   max-width: 1000px;
   margin: auto;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    font-size: 14px;
+    padding: 16px 0;
+  }
+
+  header .giustificato {
+    padding-left: 64px;
+  }
+
+  #theme-toggle {
+    margin: 12px;
+    padding: 4px;
+  }
+
+  .giustificato,
+  .allineaOrizzontale,
+  .allineaDestra {
+    padding-left: var(--spazio-s);
+    padding-right: var(--spazio-s);
+    gap: var(--spazio-s);
+  }
+
+  .hero div {
+    padding: 48px var(--spazio-s) 32px var(--spazio-s);
+  }
+
+  h1, h2 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .card {
+    width: calc(100% - 48px);
+    height: 480px;
+    margin: 32px auto;
+  }
+
+  .contenutoCard h2,
+  .cardAlternativa h2 {
+    font-size: 36px;
+  }
+
+  .cardAlternativa {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spazio-s);
+    margin: 32px auto;
+  }
+
+  .cardAlternativa img {
+    width: 100%;
+  }
+
+  .allineaDestra h2 {
+    padding: 48px 0 !important;
+  }
+
+  footer {
+    padding-inline: 0;
+    font-size: 13px;
+  }
 }
